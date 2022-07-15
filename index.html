@@ -71,6 +71,94 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo-vsCode使用技巧" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/15/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="article-date">
+  <time class="dt-published" datetime="2022-07-15T07:39:40.000Z" itemprop="datePublished">2022-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/15/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>ctrl+shift+L 选中编辑代码中相同的内容<br>按住Ctrl + Alt，再按键盘上的上或下键，可以使一列上出现多个光标</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/15/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" data-id="cl5m717vy0003ucuc1d5e5art" data-title="hexo/vsCode使用技巧" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hexo-push-error" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/15/hexo-push-error/" class="article-date">
+  <time class="dt-published" datetime="2022-07-15T07:31:49.000Z" itemprop="datePublished">2022-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/15/hexo-push-error/">hexo/hexo_push_error</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>hexo 向 git 上推送时，报错如下</p>
+<blockquote>
+<p>kex_exchange_identification: read: Connection reset by peer<br>Connection reset by 20.205.243.166 port 22<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.<br>[41mFATAL[49m {<br> err: Error: Spawn failed<br>     at ChildProcess.<anonymous> &gt;(D:\gitpages\node_modules\hexo-util\lib\spawn.js:51:21)<br>     at ChildProcess.emit (node:events:527:28)<br>     at ChildProcess.cp.emit &gt;(D:\gitpages\node_modules\cross-spawn\lib\enoent.js:34:29)<br>     at Process.ChildProcess._handle.onexit (node:internal&#x2F;&gt;child_process:291:12) {<br>   code: 128<br> }<br>} Something’s wrong. Maybe you can find the solution here: %s [4mhttps:&#x2F;&#x2F;&gt;hexo.io&#x2F;docs&#x2F;troubleshooting.html[24m</p>
+</blockquote>
+<p>分析：<br>首先怀疑是本地不能正常连接到 github 所导致,测试连接是否正常</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\gitpages&gt;ssh -T git@github.com</span><br><span class="line">kex_exchange_identification: read: Connection reset</span><br></pre></td></tr></table></figure>
+<p>确实是连接出了问题，尝试解决方法如下：</p>
+<p>···<br>ssh-keygen -R 20.205.243.166</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/15/hexo-push-error/" data-id="cl5m717vx0002ucuc8g3k51mb" data-title="hexo/hexo_push_error" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bug-hexo-push/" rel="tag">bug, hexo, push</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/07/15/test/" class="article-date">
@@ -98,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/15/test/" data-id="cl5m5271i0002wouc4rgf0t68" data-title="test" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/07/15/test/" data-id="cl5m717w30006ucuc3rxh6z9p" data-title="test" class="article-share-link">Share</a>
       
       
       
@@ -136,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/15/SqwPersonal/" data-id="cl5m5271a0000wouc90nl3oej" data-title="SqwPersonal" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/07/15/SqwPersonal/" data-id="cl5m717vr0000ucucg6h40bnm" data-title="SqwPersonal" class="article-share-link">Share</a>
       
       
       
@@ -187,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/15/hello-world/" data-id="cl5m5271e0001wouc1314e8z3" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/07/15/hello-world/" data-id="cl5m717vw0001ucucacjb87rh" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -209,9 +297,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug-hexo-push/" rel="tag">bug, hexo, push</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bug-hexo-push/" style="font-size: 10px;">bug, hexo, push</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -228,6 +330,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/07/15/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/hexo-push-error/">hexo/hexo_push_error</a>
+          </li>
         
           <li>
             <a href="/2022/07/15/test/">test</a>
