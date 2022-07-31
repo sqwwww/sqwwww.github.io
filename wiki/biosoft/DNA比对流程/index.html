@@ -3,27 +3,27 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Hexo</title>
+    <title>sqw workplace</title>
     
     
-        <meta name="keywords" content="Hexo">
+        <meta name="keywords" content="sqw workplace">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="用来 call coverage 和 snp 的流程，从reads到结果图 ref&#x3D;ref&#x2F;bowtie2Index&#x2F;subthreads&#x3D;20cat fq_list|while read id; do arr&#x3D;($id) fq1&#x3D;$&amp;#123;arr[0]&amp;#125; fq2&#x3D;$&amp;#123;arr[1]&amp;#125; sample&#x3D;&#96;basename $fq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/wiki/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="sqw workplace">
+<meta property="og:url" content="https://sqwwww.github.io/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/index.html">
+<meta property="og:site_name" content="sqw workplace">
 <meta property="og:description" content="用来 call coverage 和 snp 的流程，从reads到结果图 ref&#x3D;ref&#x2F;bowtie2Index&#x2F;subthreads&#x3D;20cat fq_list|while read id; do arr&#x3D;($id) fq1&#x3D;$&amp;#123;arr[0]&amp;#125; fq2&#x3D;$&amp;#123;arr[1]&amp;#125; sample&#x3D;&#96;basename $fq">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-16T09:21:45.332Z">
-<meta property="article:modified_time" content="2022-07-21T02:14:19.904Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2022-07-21T05:00:27.313Z">
+<meta property="article:author" content="sqw">
 <meta name="twitter:card" content="summary">
     
 
     
-        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+        <link rel="alternate" href="/atom.xml" title="sqw workplace" type="application/atom+xml">
     
 
     
@@ -77,7 +77,7 @@
         <div class="outer">
             <a href="/" id="logo">
                 <i class="logo"></i>
-                <span class="site-title">Hexo</span>
+                <span class="site-title">sqw workplace</span>
             </a>
             <nav id="main-nav">
                 
@@ -166,11 +166,107 @@
                 <aside id="sidebar">
    
         
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            2
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/2/hello-world/">Hello World</a></li>  <li class="file"><a href="/wiki/2/hexo-push-error/">hexo/hexo_push_error</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            biosoft
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file active"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  <li class="file"><a href="/wiki/test/">test</a></li>  <li class="file"><a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/RNA%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/data-table%E7%94%A8%E6%B3%95/">data.table用法</a></li>  <li class="file"><a href="/wiki/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/fastq-dump/">fastq-dump</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
     
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-DNA比对流程" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-biosoft/DNA比对流程" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -206,6 +302,9 @@ samtools view -@ 10 -bS  $&#123;sample&#125;.uniq.sam | samtools sort  -o $&#123
 samtools index $&#123;sample&#125;.uniq.bam
 </code></pre>
 <p>done</p>
+<p>sexfindR的流程</p>
+<p>call coverage 用到了 difcover，依赖到bioconductor-dnacopy，安装在 chipseq-py36下了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(chipseq-py36) qianwei ~/project/seahorse/published/assembly/map</span><br><span class="line">$conda install -c bioconda bioconductor-dnacopy</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -228,7 +327,7 @@ samtools index $&#123;sample&#125;.uniq.bam
         </a>
     
     
-        <a href="/wiki/bowtieAndBowtie2/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/wiki/biosoft/bowtieAndBowtie2/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
             <div class="article-nav-title">bowtieAndBowtie2</div>
         </a>
@@ -254,7 +353,7 @@ samtools index $&#123;sample&#125;.uniq.bam
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            John Doe &copy; 2022 
+            sqw &copy; 2022 
             <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
             <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
             

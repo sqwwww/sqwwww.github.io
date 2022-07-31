@@ -3,19 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Categories | sqw workplace</title>
+    <title>sqw workplace</title>
     
     
-        <meta name="keywords" content="Categories">
+        <meta name="keywords" content="sqw workplace">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="https://sqwwww.github.io/categories/index.html">
+    <meta name="description" content="gatk_snp流程.md 建立索引nohup ~&#x2F;biosoft&#x2F;gatk-4.1.9.0&#x2F;gatk CreateSequenceDictionary -R subelongatus.fa -O gatk.dict &amp;&gt; gatkIndex.log &amp; gatk必须要sam&#x2F;bam文件的头文件信息（reads group），其中ID，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sqw workplace">
+<meta property="og:url" content="https://sqwwww.github.io/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="sqw workplace">
+<meta property="og:description" content="gatk_snp流程.md 建立索引nohup ~&#x2F;biosoft&#x2F;gatk-4.1.9.0&#x2F;gatk CreateSequenceDictionary -R subelongatus.fa -O gatk.dict &amp;&gt; gatkIndex.log &amp; gatk必须要sam&#x2F;bam文件的头文件信息（reads group），其中ID，">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-16T03:46:33.317Z">
-<meta property="article:modified_time" content="2022-07-16T03:46:33.317Z">
+<meta property="article:published_time" content="2022-07-21T15:04:37.341Z">
+<meta property="article:modified_time" content="2022-07-21T15:04:37.490Z">
 <meta property="article:author" content="sqw">
 <meta name="twitter:card" content="summary">
     
@@ -185,13 +187,13 @@
                          <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/2/hello-world/">Hello World</a></li>  <li class="file"><a href="/wiki/2/hexo-push-error/">hexo/hexo_push_error</a></li>  </ul> 
                     </li> 
                     
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             biosoft
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file active"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
                     </li> 
                      <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  <li class="file"><a href="/wiki/test/">test</a></li>  <li class="file"><a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/RNA%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/data-table%E7%94%A8%E6%B3%95/">data.table用法</a></li>  <li class="file"><a href="/wiki/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/fastq-dump/">fastq-dump</a></li>  </ul> 
     </div>
@@ -264,16 +266,66 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><section class="layout-wrap">
-    <div class="layout-title">
-        <span>Categories</span>
-    </div>
-    <div class="layout-wrap-inner list-categories">
+            <section id="main"><article id="post-biosoft/gatk_snp流程" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2/">2</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/biosoft/">biosoft</a><span class="category-list-count">3</span></li></ul>
         
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <p>gatk_snp流程.md</p>
+<p>建立索引<br>nohup ~&#x2F;biosoft&#x2F;gatk-4.1.9.0&#x2F;gatk CreateSequenceDictionary -R subelongatus.fa -O gatk.dict &amp;&gt; gatkIndex.log &amp;</p>
+<p>gatk必须要sam&#x2F;bam文件的头文件信息（reads group），其中ID，PL和SM信息是必须要的<br>若是忘记添加read group信息还以通过 AddOrReplaceReadGroups 添加<br>GATK 要求read group的格式<br>ID &#x3D; Read group identifier<br>　　每一个read group 独有的ID，每一对reads 均有一个独特的ID，可以自定义命名；<br>PL &#x3D; Platform<br>　　测序平台；ILLUMINA, SOLID, LS454, HELICOS and PACBIO，不区分大小写；<br>SM &#x3D; sample<br>　　reads属于的样品名；SM要设定正确，因为GATK产生的VCF文件也使用这个名字;<br>LB &#x3D; DNA preparation library identifier<br>　　对一个read group的reads进行重复序列标记时，需要使用LB来区分reads来自那条lane;有时候，同一个库可能在不同的lane上完成测序;为了加以区分，<br>　　同一个或不同库只要是在不同的lane产生的reads都要单独给一个ID. 一般无特殊说明，成对儿read属于同一库，可自定义，比如：library1</p>
+<p>gatk AddOrReplaceReadGroups -I .bam -O .add.bam -LB library1 -PL illumina -PU pl1 -SM name</p>
+<p>byLongxin</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ref=ref.fasta</span><br><span class="line">sample=$1</span><br><span class="line"></span><br><span class="line">samtools faidx ref.fasta</span><br><span class="line">java -jar picard.jar CreateSequenceDictionary R=ref.fasta O=ChrAsm.dict</span><br><span class="line">java -jar picard.jar MarkDuplicates I=$ref.$sample.sorted.bam O=$ref.$sample.dedup.bam M=$sample.m</span><br><span class="line">samtools index $ref.$sample.dedup.bam</span><br><span class="line">java -jar picard.jar AddOrReplaceReadGroups I=$ref.$sample.dedup.bam O=$ref.$sample.dedup.bam.rg.bam RGID=4$sample RGLB=lib$sample RGPU=unit1 RGSM=$sample RGPL=illumina</span><br><span class="line"></span><br><span class="line">samtools index $ref.$sample.dedup.bam.rg.bam</span><br><span class="line"></span><br><span class="line">java -Xmx83g  -jar GenomeAnalysisTK.jar -T HaplotypeCaller -R ref.fasta -I $ref.$sample.dedup.bam.rg.bam --emitRefConfidence GVCF -o $ref.$sample.dedup.bam.rg.bam.g.vcf.gz -nct 12</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
     </div>
-</section></section>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/RNA%E6%B5%81%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    (no title)
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">ragtag使用</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
         </div>
         <footer id="footer">
     <div class="outer">

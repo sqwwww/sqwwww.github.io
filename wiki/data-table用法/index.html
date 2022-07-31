@@ -3,19 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Categories | sqw workplace</title>
+    <title>data.table用法 | sqw workplace</title>
     
     
-        <meta name="keywords" content="Categories">
+        <meta name="keywords" content="data.table用法">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="https://sqwwww.github.io/categories/index.html">
+    <meta name="description" content="赋值df_combined[,’:&#x3D;’(‘1_2’ &#x3D; sub1 &gt; sub2, ‘1_3’ &#x3D; sub1 &gt; sub3, ‘1_4’ &#x3D; sub1 &gt; sub4, ‘1_5’ &#x3D; sub1&gt; sub5,                  ‘2_3’ &#x3D; sub2&gt;sub3, ‘2_4’&#x3D; sub2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="data.table用法">
+<meta property="og:url" content="https://sqwwww.github.io/wiki/data-table%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="sqw workplace">
+<meta property="og:description" content="赋值df_combined[,’:&#x3D;’(‘1_2’ &#x3D; sub1 &gt; sub2, ‘1_3’ &#x3D; sub1 &gt; sub3, ‘1_4’ &#x3D; sub1 &gt; sub4, ‘1_5’ &#x3D; sub1&gt; sub5,                  ‘2_3’ &#x3D; sub2&gt;sub3, ‘2_4’&#x3D; sub2">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-16T03:46:33.317Z">
-<meta property="article:modified_time" content="2022-07-16T03:46:33.317Z">
+<meta property="article:published_time" content="2022-07-25T04:40:17.000Z">
+<meta property="article:modified_time" content="2022-07-28T09:44:30.044Z">
 <meta property="article:author" content="sqw">
 <meta name="twitter:card" content="summary">
     
@@ -193,7 +195,7 @@
                         </a>
                          <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
                     </li> 
-                     <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  <li class="file"><a href="/wiki/test/">test</a></li>  <li class="file"><a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/RNA%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/data-table%E7%94%A8%E6%B3%95/">data.table用法</a></li>  <li class="file"><a href="/wiki/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/fastq-dump/">fastq-dump</a></li>  </ul> 
+                     <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  <li class="file"><a href="/wiki/test/">test</a></li>  <li class="file"><a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/RNA%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file active"><a href="/wiki/data-table%E7%94%A8%E6%B3%95/">data.table用法</a></li>  <li class="file"><a href="/wiki/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/fastq-dump/">fastq-dump</a></li>  </ul> 
     </div>
     <script>
         $(document).ready(function() {
@@ -264,16 +266,118 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><section class="layout-wrap">
-    <div class="layout-title">
-        <span>Categories</span>
-    </div>
-    <div class="layout-wrap-inner list-categories">
+            <section id="main"><article id="post-data-table用法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2/">2</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/biosoft/">biosoft</a><span class="category-list-count">3</span></li></ul>
         
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/data-table%E7%94%A8%E6%B3%95/">
+            <time datetime="2022-07-25T04:40:17.000Z" itemprop="datePublished">2022-07-25</time>
+        </a>
     </div>
-</section></section>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/data-table用法.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/data-table用法.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/data-table用法.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            data.table用法
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                </div>
+            
+        
+        
+            <p>赋值<br>df_combined[,’:&#x3D;’(‘1_2’ &#x3D; sub1 &gt; sub2, ‘1_3’ &#x3D; sub1 &gt; sub3, ‘1_4’ &#x3D; sub1 &gt; sub4, ‘1_5’ &#x3D; sub1&gt; sub5,<br>                  ‘2_3’ &#x3D; sub2&gt;sub3, ‘2_4’&#x3D; sub2&gt;sub4,’2_5’&#x3D; sub2&gt;sub5,<br>                  ‘3_4’&#x3D;sub3&gt;sub4, ‘3_5’&#x3D;sub3&gt;sub5,<br>                  ‘4_5’&#x3D;sub4&gt;sub5)]</p>
+<p>myWindow[order(CN, S,E),<br>         g :&#x3D; .(cumsum(c(0L,(shift(S, -1) &gt; cummax(E))[-.N]))),by &#x3D; CN]<br>myRegion &lt;- myWindow[order(CN,S,E),.(NS &#x3D; min(S), NE &#x3D; max(E), num &#x3D; .N, log &#x3D; mean(log2MFR)),<br>                     by &#x3D; .(CN, g)]</p>
+<p>df_combined_filtered[order(CHROM, BIN_START,BIN_END),<br>         g :&#x3D; .(cumsum(c(0L,(shift(BIN_START, -1) &gt; cummax(BIN_END))[-.N]))),by &#x3D; CHROM]<br>myRegion &lt;- df_combined_filtered[order(CHROM, BIN_START,BIN_END),.(NS &#x3D; min(S), NE &#x3D; max(E), num &#x3D; .N,<br>                     by &#x3D; .(CHROM, g)]</p>
+<p>对某一列重命名<br>setnames(tmp_data, “gene_id”, current_sampleID)</p>
+<p>Pitching[ , .SD, .SDcols &#x3D; c(‘W’, ‘L’, ‘G’)]<br>DT[i, c(“LHS1”, “LHS2”) :&#x3D; list(RHS1, RHS2), by &#x3D; …]</p>
+<p>填补NA<br>replace_na(df$X1,5) # 把df的X1列中的NA填充为5</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href></a></li>
+<li><a href></a></li>
+</ul>
+</blockquote>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/coverage-pipeline/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    coverage_pipeline
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/shell%E6%8A%80%E5%B7%A7/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">data.table用法</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
         </div>
         <footer id="footer">
     <div class="outer">

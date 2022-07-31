@@ -3,23 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Hexo</title>
+    <title>sqw workplace</title>
     
     
-        <meta name="keywords" content="Hexo">
+        <meta name="keywords" content="sqw workplace">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="sqw workplace">
+<meta property="og:url" content="https://sqwwww.github.io/page/2/index.html">
+<meta property="og:site_name" content="sqw workplace">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="sqw">
 <meta name="twitter:card" content="summary">
     
 
     
-        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+        <link rel="alternate" href="/atom.xml" title="sqw workplace" type="application/atom+xml">
     
 
     
@@ -73,7 +73,7 @@
         <div class="outer">
             <a href="/" id="logo">
                 <i class="logo"></i>
-                <span class="site-title">Hexo</span>
+                <span class="site-title">sqw workplace</span>
             </a>
             <nav id="main-nav">
                 
@@ -162,12 +162,108 @@
                 <aside id="sidebar">
    
         
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            2
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/2/hello-world/">Hello World</a></li>  <li class="file"><a href="/wiki/2/hexo-push-error/">hexo/hexo_push_error</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            biosoft
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  <li class="file"><a href="/wiki/test/">test</a></li>  <li class="file"><a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/RNA%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/data-table%E7%94%A8%E6%B3%95/">data.table用法</a></li>  <li class="file"><a href="/wiki/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/fastq-dump/">fastq-dump</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
     
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
             <section id="main">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-stringtie使用" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -179,7 +275,525 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/wiki/hello-world/">
+        <a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">
+            <time datetime="2022-07-16T02:40:55.000Z" itemprop="datePublished">2022-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/stringtie使用.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/stringtie使用.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/stringtie使用.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">$stringtie -h</span><br><span class="line">StringTie v2.1.5 usage:</span><br><span class="line"></span><br><span class="line">stringtie &lt;in.bam ..&gt; [-G &lt;guide_gff&gt;] [-l &lt;prefix&gt;] [-o &lt;out.gtf&gt;] [-p &lt;cpus&gt;]</span><br><span class="line"> [-v] [-a &lt;min_anchor_len&gt;] [-m &lt;min_len&gt;] [-j &lt;min_anchor_cov&gt;] [-f &lt;min_iso&gt;]</span><br><span class="line"> [-c &lt;min_bundle_cov&gt;] [-g &lt;bdist&gt;] [-u] [-L] [-e] [--viral] [-E &lt;err_margin&gt;]</span><br><span class="line"> [--ptf &lt;f_tab&gt;] [-x &lt;seqid,..&gt;] [-A &lt;gene_abund.out&gt;] [-h] &#123;-B|-b &lt;dir_path&gt;&#125;</span><br><span class="line">Assemble RNA-Seq alignments into potential transcripts.</span><br><span class="line">Options:</span><br><span class="line"> --version : print just the version at stdout and exit</span><br><span class="line"> --conservative : conservative transcript assembly, same as -t -c 1.5 -f 0.05</span><br><span class="line"> --rf : assume stranded library fr-firststrand</span><br><span class="line"> --fr : assume stranded library fr-secondstrand</span><br><span class="line"> -G reference annotation to use for guiding the assembly process (GTF/GFF3)</span><br><span class="line"> --ptf : load point-features from a given 4 column feature file &lt;f_tab&gt;</span><br><span class="line"> -o output path/file name for the assembled transcripts GTF (default: stdout)</span><br><span class="line"> -l name prefix for output transcripts (default: STRG)</span><br><span class="line"> -f minimum isoform fraction (default: 0.01)</span><br><span class="line"> -L long reads processing; also enforces -s 1.5 -g 0 (default:false)</span><br><span class="line"> -R if long reads are provided, just clean and collapse the reads but</span><br><span class="line">    do not assemble</span><br><span class="line"> -m minimum assembled transcript length (default: 200)</span><br><span class="line"> -a minimum anchor length for junctions (default: 10)</span><br><span class="line"> -j minimum junction coverage (default: 1)</span><br><span class="line"> -t disable trimming of predicted transcripts based on coverage</span><br><span class="line">    (default: coverage trimming is enabled)</span><br><span class="line"> -c minimum reads per bp coverage to consider for multi-exon transcript</span><br><span class="line">    (default: 1)</span><br><span class="line"> -s minimum reads per bp coverage to consider for single-exon transcript</span><br><span class="line">    (default: 4.75)</span><br><span class="line"> -v verbose (log bundle processing details)</span><br><span class="line"> -g maximum gap allowed between read mappings (default: 50)</span><br><span class="line"> -M fraction of bundle allowed to be covered by multi-hit reads (default:1)</span><br><span class="line"> -p number of threads (CPUs) to use (default: 1)</span><br><span class="line"> -A gene abundance estimation output file</span><br><span class="line"> -E define window around possibly erroneous splice sites from long reads to</span><br><span class="line">    look out for correct splice sites (default: 25)</span><br><span class="line"> -B enable output of Ballgown table files which will be created in the</span><br><span class="line">    same directory as the output GTF (requires -G, -o recommended)</span><br><span class="line"> -b enable output of Ballgown table files but these files will be </span><br><span class="line">    created under the directory path given as &lt;dir_path&gt;</span><br><span class="line"> -e only estimate the abundance of given reference transcripts (requires -G)</span><br><span class="line"> --viral : only relevant for long reads from viral data where splice sites</span><br><span class="line">    do not follow consensus (default:false)</span><br><span class="line"> -x do not assemble any transcripts on the given reference sequence(s)</span><br><span class="line"> -u no multi-mapping correction (default: correction enabled)</span><br><span class="line"> -h print this usage message and exit</span><br><span class="line">Transcript merge usage mode: </span><br><span class="line">  stringtie --merge [Options] &#123; gtf_list | strg1.gtf ...&#125;</span><br><span class="line">With this option StringTie will assemble transcripts from multiple</span><br><span class="line">input files generating a unified non-redundant set of isoforms. In this mode</span><br><span class="line">the following options are available:</span><br><span class="line">  -G &lt;guide_gff&gt;   reference annotation to include in the merging (GTF/GFF3)</span><br><span class="line">  -o &lt;out_gtf&gt;     output file name for the merged transcripts GTF</span><br><span class="line">                    (default: stdout)</span><br><span class="line">  -m &lt;min_len&gt;     minimum input transcript length to include in the merge</span><br><span class="line">                    (default: 50)</span><br><span class="line">  -c &lt;min_cov&gt;     minimum input transcript coverage to include in the merge</span><br><span class="line">                    (default: 0)</span><br><span class="line">  -F &lt;min_fpkm&gt;    minimum input transcript FPKM to include in the merge</span><br><span class="line">                    (default: 1.0)</span><br><span class="line">  -T &lt;min_tpm&gt;     minimum input transcript TPM to include in the merge</span><br><span class="line">                    (default: 1.0)</span><br><span class="line">  -f &lt;min_iso&gt;     minimum isoform fraction (default: 0.01)</span><br><span class="line">  -g &lt;gap_len&gt;     gap between transcripts to merge together (default: 250)</span><br><span class="line">  -i               keep merged transcripts with retained introns; by default</span><br><span class="line">                   these are not kept unless there is strong evidence for them</span><br><span class="line">  -l &lt;label&gt;       name prefix for output transcripts (default: MSTRG)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</p><p>The generic command line for the default usage has this format::</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stringtie [-o &lt;output.gtf&gt;] [other_options] &lt;read_alignments.bam&gt;</span><br></pre></td></tr></table></figure>
+
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-hisat2-rsem-连用" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">
+            <time datetime="2022-07-16T02:19:15.000Z" itemprop="datePublished">2022-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/hisat2-rsem-连用.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/hisat2-rsem-连用.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/hisat2-rsem-连用.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><p>尝试使用rsem定量hisat2的比对结果，失败了</p>
+<blockquote>
+<p>$rsem-calculate-expression –paired-end –alignments Ha5_Fb2.uniq.bam &#x2F;public2&#x2F;home&#x2F;qianwei&#x2F;project&#x2F;seahorse&#x2F;02.ref&#x2F;RsemIndex&#x2F;Ha_Rsem Ha5_Fb2<br>rsem-parse-alignments &#x2F;public2&#x2F;home&#x2F;qianwei&#x2F;project&#x2F;seahorse&#x2F;02.ref&#x2F;RsemIndex&#x2F;Ha_Rsem Ha5_Fb2.temp&#x2F;Ha5_Fb2 Ha5_Fb2.stat&#x2F;Ha5_Fb2 Ha5_Fb2.uniq.bam 3 -tag XM<br>Warning: The SAM&#x2F;BAM file declares less reference sequences (168) than RSEM knows (27642)! Please make sure that you aligned your reads against transcript sequences  instead of genome.<br>RSEM can not recognize reference sequence name Chr1!<br>“rsem-parse-alignments &#x2F;public2&#x2F;home&#x2F;qianwei&#x2F;project&#x2F;seahorse&#x2F;02.ref&#x2F;RsemIndex&#x2F;Ha_Rsem Ha5_Fb2.temp&#x2F;Ha5_Fb2 Ha5_Fb2.stat&#x2F;Ha5_Fb2 Ha5_Fb2.uniq.bam 3 -tag XM” failed! Plase check if you provide correct parameters&#x2F;options for the pipeline!</p>
+</blockquote>
+<p>原因分析：<br>表面上这个报错是说 hisat2的bam文件跟 Rsem 的索引不兼容。实际上 rsem 不支持 gapped alignment的定量，hisat2在比对过程中使用的就是 gapped alignment，所以两个软件本质上就是不兼容的，不能连用。</p>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-hexo-vsCode使用技巧" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+            <time datetime="2022-07-15T07:39:40.000Z" itemprop="datePublished">2022-07-15</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/hexo-vsCode使用技巧.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/hexo-vsCode使用技巧.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/hexo-vsCode使用技巧.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+            
+        
+        
+            <p>ctrl+shift+L 选中编辑代码中相同的内容<br>按住Ctrl + Alt，再按键盘上的上或下键，可以使一列上出现多个光标</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-2/hexo-push-error" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/2/">2</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/bug-hexo-push/" rel="tag">bug, hexo, push</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/2/hexo-push-error/">
+            <time datetime="2022-07-15T07:31:49.000Z" itemprop="datePublished">2022-07-15</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/2/hexo-push-error.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/2/hexo-push-error.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/2/hexo-push-error.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wiki/2/hexo-push-error/">hexo/hexo_push_error</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><p>hexo 向 git 上推送时，报错如下</p>
+<blockquote>
+<p>kex_exchange_identification: read: Connection reset by peer<br>Connection reset by 20.205.243.166 port 22<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.<br>[41mFATAL[49m {<br> err: Error: Spawn failed<br>     at ChildProcess.<anonymous> &gt;(D:\gitpages\node_modules\hexo-util\lib\spawn.js:51:21)<br>     at ChildProcess.emit (node:events:527:28)<br>     at ChildProcess.cp.emit &gt;(D:\gitpages\node_modules\cross-spawn\lib\enoent.js:34:29)<br>     at Process.ChildProcess._handle.onexit (node:internal&#x2F;&gt;child_process:291:12) {<br>   code: 128<br> }<br>} Something’s wrong. Maybe you can find the solution here: %s [4mhttps:&#x2F;&#x2F;&gt;hexo.io&#x2F;docs&#x2F;troubleshooting.html[24m</anonymous></p>
+</blockquote>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/wiki/2/hexo-push-error/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/test/">
+            <time datetime="2022-07-15T05:02:29.000Z" itemprop="datePublished">2022-07-15</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/test.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/test.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/test.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wiki/test/">test</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+            
+        
+        
+            <p>dsada<br>dateas</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-SqwPersonal" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/SqwPersonal/">
+            <time datetime="2022-07-15T04:49:53.000Z" itemprop="datePublished">2022-07-15</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/SqwPersonal.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/SqwPersonal.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/SqwPersonal.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wiki/SqwPersonal/">SqwPersonal</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-2/hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/2/">2</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/2/hello-world/">
             <time datetime="2022-07-15T04:43:55.097Z" itemprop="datePublished">2022-07-15</time>
         </a>
     </div>
@@ -191,13 +805,13 @@
                         
                         
                             <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/hello-world.md"> Source </a>
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/2/hello-world.md"> Source </a>
                             </div>
                             <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/hello-world.md"> Edit </a>
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/2/hello-world.md"> Edit </a>
                             </div>
                             <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/hello-world.md"> History </a>
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/2/hello-world.md"> History </a>
                             </div>
                         
                     </div>
@@ -205,7 +819,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/wiki/hello-world/">Hello World</a>
+            <a class="article-title" href="/wiki/2/hello-world/">Hello World</a>
         </h1>
     
 
@@ -247,7 +861,7 @@
         
             </p></div>   
             <div class="article-more-link">
-                <a href="/wiki/hello-world/#more">Read More</a>
+                <a href="/wiki/2/hello-world/#more">Read More</a>
             </div>
         
         <footer class="article-footer">
@@ -270,7 +884,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            John Doe &copy; 2022 
+            sqw &copy; 2022 
             <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
             <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
             
