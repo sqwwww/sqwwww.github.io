@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>hexo/hexo_push_error | sqw workplace</title>
+    
+    
+        <meta name="keywords" content="bug, hexo, push">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="hexo 向 git 上推送时，报错如下  kex_exchange_identification: read: Connection reset by peerConnection reset by 20.205.243.166 port 22fatal: Could not read from remote repository. Please make sure you have the c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo&#x2F;hexo_push_error">
+<meta property="og:url" content="https://sqwwww.github.io/wiki/2/hexo-push-error/index.html">
+<meta property="og:site_name" content="sqw workplace">
+<meta property="og:description" content="hexo 向 git 上推送时，报错如下  kex_exchange_identification: read: Connection reset by peerConnection reset by 20.205.243.166 port 22fatal: Could not read from remote repository. Please make sure you have the c">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-15T07:31:49.000Z">
+<meta property="article:modified_time" content="2022-07-16T09:21:01.964Z">
+<meta property="article:author" content="sqw">
+<meta property="article:tag" content="bug, hexo, push">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="sqw workplace" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">sqw workplace</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            2
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/wiki/2/hexo-push-error/">hexo/hexo_push_error</a></li>  <li class="file"><a href="/wiki/2/hello-world/">Hello World</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            biosoft
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  <li class="file"><a href="/wiki/test/">test</a></li>  <li class="file"><a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/R/">R</a></li>  <li class="file"><a href="/wiki/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/fastq-dump/">fastq-dump</a></li>  <li class="file"><a href="/wiki/fish/">fish</a></li>  <li class="file"><a href="/wiki/blast/">blast</a></li>  <li class="file"><a href="/wiki/lipidDroplet/">lipidDroplet</a></li>  <li class="file"><a href="/wiki/genoPlotR/">genoPlotR</a></li>  <li class="file"><a href="/wiki/bwa/">bwa</a></li>  <li class="file"><a href="/wiki/RNA%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-2/hexo-push-error" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/2/">2</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/bug-hexo-push/" rel="tag">bug, hexo, push</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/2/hexo-push-error/">
+            <time datetime="2022-07-15T07:31:49.000Z" itemprop="datePublished">2022-07-15</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/2/hexo-push-error.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/2/hexo-push-error.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/2/hexo-push-error.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            hexo/hexo_push_error
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <p>hexo 向 git 上推送时，报错如下</p>
+<blockquote>
+<p>kex_exchange_identification: read: Connection reset by peer<br>Connection reset by 20.205.243.166 port 22<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.<br>[41mFATAL[49m {<br> err: Error: Spawn failed<br>     at ChildProcess.<anonymous> &gt;(D:\gitpages\node_modules\hexo-util\lib\spawn.js:51:21)<br>     at ChildProcess.emit (node:events:527:28)<br>     at ChildProcess.cp.emit &gt;(D:\gitpages\node_modules\cross-spawn\lib\enoent.js:34:29)<br>     at Process.ChildProcess._handle.onexit (node:internal&#x2F;&gt;child_process:291:12) {<br>   code: 128<br> }<br>} Something’s wrong. Maybe you can find the solution here: %s [4mhttps:&#x2F;&#x2F;&gt;hexo.io&#x2F;docs&#x2F;troubleshooting.html[24m</anonymous></p>
+</blockquote>
+<p>分析：<br>首先怀疑是本地不能正常连接到 github 所导致,测试连接是否正常</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\gitpages&gt;ssh -T git@github.com</span><br><span class="line">kex_exchange_identification: read: Connection reset</span><br></pre></td></tr></table></figure>
+<p>确实是连接出了问题，尝试解决方法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">D:\gitpages&gt;ssh-keygen -R 20.205.243.166</span><br><span class="line"># Host 20.205.243.166 found: line 1</span><br><span class="line">C:\Users\sqw/.ssh/known_hosts updated.</span><br><span class="line">Original contents retained as C:\Users\sqw/.ssh/known_hosts.old</span><br><span class="line">#这里是重新生成了known_host文件</span><br><span class="line"></span><br><span class="line">D:\gitpages&gt;ssh -T git@github.com</span><br><span class="line">The authenticity of host &#x27;github.com (20.205.243.166)&#x27; can&#x27;t be established.</span><br><span class="line">ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.</span><br><span class="line">Are you sure you want to continue connecting (yes/no/[fingerprint])? y</span><br><span class="line">Please type &#x27;yes&#x27;, &#x27;no&#x27; or the fingerprint: yes</span><br><span class="line">Warning: Permanently added &#x27;github.com,20.205.243.166&#x27; (ECDSA) to the list of known hosts.</span><br><span class="line">Hi sqwwww! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line">#本地重新把github的指纹加进known host文件里。</span><br></pre></td></tr></table></figure>
+<p>接下来执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>成功推送</p>
+<p>gitpages默认branch是main，但我的主页设置在master，需要把默认branch从main改成master<br>参照这篇 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/xuchaoxin1375/article/details/111414527">https://blog.csdn.net/xuchaoxin1375/article/details/111414527</a><br>github允许每个仓库的default branch 可以单独设置</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    hexo/vsCode使用技巧
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/test/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">test</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            sqw &copy; 2022 
+            <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

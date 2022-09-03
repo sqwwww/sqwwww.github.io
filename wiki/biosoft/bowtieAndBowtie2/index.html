@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>bowtieAndBowtie2 | sqw workplace</title>
+    
+    
+        <meta name="keywords" content="bowtieAndBowtie2">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="bowtie和bowtie2的区别这两个软件都适合DNA的比对，bowtie开发的比较早，适合短reads（50bp）的比对，bowtie2适合长一点的reads（150bp）的比对，现在的数据基本上都适合用bowtie2 bowtie2 如何选择 uniq mapping 的 reads 1grep &quot;AS:&quot; aligned.sam | grep -v &quot;XS:i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bowtieAndBowtie2">
+<meta property="og:url" content="https://sqwwww.github.io/wiki/biosoft/bowtieAndBowtie2/index.html">
+<meta property="og:site_name" content="sqw workplace">
+<meta property="og:description" content="bowtie和bowtie2的区别这两个软件都适合DNA的比对，bowtie开发的比较早，适合短reads（50bp）的比对，bowtie2适合长一点的reads（150bp）的比对，现在的数据基本上都适合用bowtie2 bowtie2 如何选择 uniq mapping 的 reads 1grep &quot;AS:&quot; aligned.sam | grep -v &quot;XS:i">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-16T09:01:36.000Z">
+<meta property="article:modified_time" content="2022-07-21T02:14:19.904Z">
+<meta property="article:author" content="sqw">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="sqw workplace" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">sqw workplace</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            2
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/2/hexo-push-error/">hexo/hexo_push_error</a></li>  <li class="file"><a href="/wiki/2/hello-world/">Hello World</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            biosoft
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  <li class="file"><a href="/wiki/test/">test</a></li>  <li class="file"><a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/R/">R</a></li>  <li class="file"><a href="/wiki/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/fastq-dump/">fastq-dump</a></li>  <li class="file"><a href="/wiki/fish/">fish</a></li>  <li class="file"><a href="/wiki/blast/">blast</a></li>  <li class="file"><a href="/wiki/lipidDroplet/">lipidDroplet</a></li>  <li class="file"><a href="/wiki/genoPlotR/">genoPlotR</a></li>  <li class="file"><a href="/wiki/bwa/">bwa</a></li>  <li class="file"><a href="/wiki/RNA%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-biosoft/bowtieAndBowtie2" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/biosoft/">biosoft</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/biosoft/bowtieAndBowtie2/">
+            <time datetime="2022-07-16T09:01:36.000Z" itemprop="datePublished">2022-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/biosoft/bowtieAndBowtie2.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/biosoft/bowtieAndBowtie2.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/biosoft/bowtieAndBowtie2.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            bowtieAndBowtie2
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                </div>
+            
+        
+        
+            <p>bowtie和bowtie2的区别<br>这两个软件都适合DNA的比对，bowtie开发的比较早，适合短reads（50bp）的比对，bowtie2适合长一点的reads（150bp）的比对，现在的数据基本上都适合用bowtie2</p>
+<p>bowtie2 如何选择 uniq mapping 的 reads</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;AS:&quot; aligned.sam | grep -v &quot;XS:i&quot;</span><br></pre></td></tr></table></figure>
+
+<p>hisat比的话 grep “NH:i:1” aligned.sam | grep -v “ZS:i” </p>
+<p>bowtie2 建立索引</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bowtie2-build --threads 25 $fa bowtie2Index/Ha</span><br></pre></td></tr></table></figure>
+<p>bowtie2 比对</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ref=~/project/brain/ref/bowtie2-index/dmel-r6.12</span><br><span class="line">cores=12</span><br><span class="line">cat clean_list|while read id; do</span><br><span class="line">	arr=($id)</span><br><span class="line">	fq1=$&#123;arr[0]&#125;</span><br><span class="line">	fq2=$&#123;arr[1]&#125;</span><br><span class="line">	prefix=`basename $fq1 _clean_R1.fq.gz`</span><br><span class="line"></span><br><span class="line">	echo $&#123;prefix&#125;--------------------------------------------------------------------------------</span><br><span class="line">	bowtie2 -p $&#123;cores&#125; \</span><br><span class="line">	-x $&#123;ref&#125; \</span><br><span class="line">	-1 $&#123;fq1&#125; \</span><br><span class="line">	-2 $&#123;fq2&#125; \</span><br><span class="line">	-S $&#123;prefix&#125;.sam </span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>$bowtie2-build -h<br>Bowtie 2 version 2.3.5.1 by Ben Langmead (<a href="mailto:&#x6c;&#97;&#x6e;&#x67;&#109;&#101;&#x61;&#64;&#99;&#115;&#x2e;&#x6a;&#104;&#x75;&#46;&#101;&#100;&#117;">&#x6c;&#97;&#x6e;&#x67;&#109;&#101;&#x61;&#64;&#99;&#115;&#x2e;&#x6a;&#104;&#x75;&#46;&#101;&#100;&#117;</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.cs.jhu.edu/~langmea">www.cs.jhu.edu/~langmea</a>)<br>Usage: bowtie2-build [options]* <reference_in> <bt2_index_base><br>    reference_in            comma-separated list of files with ref sequences<br>    bt2_index_base          write bt2 data to files with this dir&#x2F;basename<br>*** Bowtie 2 indexes work only with v2 (not v1).  Likewise for v1 indexes. ***<br>Options:<br>    -f                      reference files are Fasta (default)<br>    -c                      reference sequences given on cmd line (as<br>                            <reference_in>)<br>    –large-index           force generated index to be ‘large’, even if ref<br>                            has fewer than 4 billion nucleotides<br>    –debug                 use the debug binary; slower, assertions enabled<br>    –sanitized             use sanitized binary; slower, uses ASan and&#x2F;or UBSan<br>    –verbose               log the issued command<br>    -a&#x2F;–noauto             disable automatic -p&#x2F;–bmax&#x2F;–dcv memory-fitting<br>    -p&#x2F;–packed             use packed strings internally; slower, less memory<br>    –bmax <int>            max bucket sz for blockwise suffix-array builder<br>    –bmaxdivn <int>        max bucket sz as divisor of ref len (default: 4)<br>    –dcv <int>             diff-cover period for blockwise (default: 1024)<br>    –nodc                  disable diff-cover (algorithm becomes quadratic)<br>    -r&#x2F;–noref              don’t build .3&#x2F;.4 index files<br>    -3&#x2F;–justref            just build .3&#x2F;.4 index files<br>    -o&#x2F;–offrate <int>      SA is sampled every 2^<int> BWT chars (default: 5)<br>    -t&#x2F;–ftabchars <int>    # of chars consumed in initial lookup (default: 10)<br>    –threads <int>         # of threads<br>    –seed <int>            seed for random number generator<br>    -q&#x2F;–quiet              verbose output (for debugging)<br>    -h&#x2F;–help               print detailed description of tool and its options<br>    –usage                 print this usage message<br>    –version               print version information and quit</int></int></int></int></int></int></int></int></reference_in></bt2_index_base></reference_in></p>
+<p>$bowtie2 -h<br>Bowtie 2 version 2.3.5.1 by Ben Langmead (<a href="mailto:&#108;&#97;&#x6e;&#x67;&#109;&#x65;&#97;&#64;&#x63;&#115;&#46;&#106;&#x68;&#117;&#46;&#101;&#100;&#x75;">&#108;&#97;&#x6e;&#x67;&#109;&#x65;&#97;&#64;&#x63;&#115;&#46;&#106;&#x68;&#117;&#46;&#101;&#100;&#x75;</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.cs.jhu.edu/~langmea">www.cs.jhu.edu/~langmea</a>)<br>Usage:<br>  bowtie2 [options]* -x <bt2-idx> {-1 <m1> -2 <m2> | -U <r> | –interleaved <i> | -b <bam>} [-S <sam>]</sam></bam></i></r></m2></m1></bt2-idx></p>
+<p>  <bt2-idx>  Index filename prefix (minus trailing .X.bt2).<br>             NOTE: Bowtie 1 and Bowtie 2 indexes are not compatible.<br>  <m1>       Files with #1 mates, paired with files in <m2>.<br>             Could be gzip’ed (extension: .gz) or bzip2’ed (extension: .bz2).<br>  <m2>       Files with #2 mates, paired with files in <m1>.<br>             Could be gzip’ed (extension: .gz) or bzip2’ed (extension: .bz2).<br>  <r>        Files with unpaired reads.<br>             Could be gzip’ed (extension: .gz) or bzip2’ed (extension: .bz2).<br>  <i>        Files with interleaved paired-end FASTQ&#x2F;FASTA reads<br>             Could be gzip’ed (extension: .gz) or bzip2’ed (extension: .bz2).<br>  <bam>      Files are unaligned BAM sorted by read name.<br>  <sam>      File for SAM output (default: stdout)</sam></bam></i></r></m1></m2></m2></m1></bt2-idx></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href></a></li>
+<li><a href></a></li>
+</ul>
+</blockquote>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    ragtag使用
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/StardewValley/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">StardewValley</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            sqw &copy; 2022 
+            <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
