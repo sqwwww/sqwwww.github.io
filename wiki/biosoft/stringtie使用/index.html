@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>stringtie使用 | sqw workplace</title>
+    
+    
+        <meta name="keywords" content="stringtie使用">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869$stringtie -hStringTie v2.1.5 usage:stringtie &lt;in.bam ..&gt; [-G &amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stringtie使用">
+<meta property="og:url" content="https://sqwwww.github.io/wiki/biosoft/stringtie%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="sqw workplace">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869$stringtie -hStringTie v2.1.5 usage:stringtie &lt;in.bam ..&gt; [-G &amp;lt">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-16T02:40:55.000Z">
+<meta property="article:modified_time" content="2022-07-16T09:21:01.964Z">
+<meta property="article:author" content="sqw">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="sqw workplace" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">sqw workplace</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            biosoft
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            error
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/error/errorRecord/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/biosoft/seqkit/">test</a></li>  <li class="file"><a href="/wiki/biosoft/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file active"><a href="/wiki/biosoft/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/biosoft/fastq-dump/">fastq-dump</a></li>  <li class="file"><a href="/wiki/biosoft/blast/">blast</a></li>  <li class="file"><a href="/wiki/biosoft/bwa/">bwa</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            codeSkill
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/codeSkill/R/">R</a></li>  <li class="file"><a href="/wiki/codeSkill/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/codeSkill/genoPlotR/">genoPlotR</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            knowledge
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/knowledge/%E8%A1%A8%E7%9A%AE%E5%8F%91%E8%82%B2/">表皮发育</a></li>  <li class="file"><a href="/wiki/knowledge/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/knowledge/fish/">fish</a></li>  <li class="file"><a href="/wiki/knowledge/lipidDroplet/">lipidDroplet</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            pipeline
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/pipeline/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/">DNA比对流程</a></li>  <li class="file"><a href="/wiki/pipeline/gatk_snp%E6%B5%81%E7%A8%8B/">gatk_snp流程.md</a></li>  <li class="file"><a href="/wiki/pipeline/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/pipeline/RNA%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            tmp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/tmp/hexo-push-error/">hexo/hexo_push_error</a></li>  <li class="file"><a href="/wiki/tmp/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/tmp/hello-world/">Hello World</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-biosoft/stringtie使用" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/biosoft/">biosoft</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/biosoft/stringtie%E4%BD%BF%E7%94%A8/">
+            <time datetime="2022-07-16T02:40:55.000Z" itemprop="datePublished">2022-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/biosoft/stringtie使用.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/biosoft/stringtie使用.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/biosoft/stringtie使用.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            stringtie使用
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">$stringtie -h</span><br><span class="line">StringTie v2.1.5 usage:</span><br><span class="line"></span><br><span class="line">stringtie &lt;in.bam ..&gt; [-G &lt;guide_gff&gt;] [-l &lt;prefix&gt;] [-o &lt;out.gtf&gt;] [-p &lt;cpus&gt;]</span><br><span class="line"> [-v] [-a &lt;min_anchor_len&gt;] [-m &lt;min_len&gt;] [-j &lt;min_anchor_cov&gt;] [-f &lt;min_iso&gt;]</span><br><span class="line"> [-c &lt;min_bundle_cov&gt;] [-g &lt;bdist&gt;] [-u] [-L] [-e] [--viral] [-E &lt;err_margin&gt;]</span><br><span class="line"> [--ptf &lt;f_tab&gt;] [-x &lt;seqid,..&gt;] [-A &lt;gene_abund.out&gt;] [-h] &#123;-B|-b &lt;dir_path&gt;&#125;</span><br><span class="line">Assemble RNA-Seq alignments into potential transcripts.</span><br><span class="line">Options:</span><br><span class="line"> --version : print just the version at stdout and exit</span><br><span class="line"> --conservative : conservative transcript assembly, same as -t -c 1.5 -f 0.05</span><br><span class="line"> --rf : assume stranded library fr-firststrand</span><br><span class="line"> --fr : assume stranded library fr-secondstrand</span><br><span class="line"> -G reference annotation to use for guiding the assembly process (GTF/GFF3)</span><br><span class="line"> --ptf : load point-features from a given 4 column feature file &lt;f_tab&gt;</span><br><span class="line"> -o output path/file name for the assembled transcripts GTF (default: stdout)</span><br><span class="line"> -l name prefix for output transcripts (default: STRG)</span><br><span class="line"> -f minimum isoform fraction (default: 0.01)</span><br><span class="line"> -L long reads processing; also enforces -s 1.5 -g 0 (default:false)</span><br><span class="line"> -R if long reads are provided, just clean and collapse the reads but</span><br><span class="line">    do not assemble</span><br><span class="line"> -m minimum assembled transcript length (default: 200)</span><br><span class="line"> -a minimum anchor length for junctions (default: 10)</span><br><span class="line"> -j minimum junction coverage (default: 1)</span><br><span class="line"> -t disable trimming of predicted transcripts based on coverage</span><br><span class="line">    (default: coverage trimming is enabled)</span><br><span class="line"> -c minimum reads per bp coverage to consider for multi-exon transcript</span><br><span class="line">    (default: 1)</span><br><span class="line"> -s minimum reads per bp coverage to consider for single-exon transcript</span><br><span class="line">    (default: 4.75)</span><br><span class="line"> -v verbose (log bundle processing details)</span><br><span class="line"> -g maximum gap allowed between read mappings (default: 50)</span><br><span class="line"> -M fraction of bundle allowed to be covered by multi-hit reads (default:1)</span><br><span class="line"> -p number of threads (CPUs) to use (default: 1)</span><br><span class="line"> -A gene abundance estimation output file</span><br><span class="line"> -E define window around possibly erroneous splice sites from long reads to</span><br><span class="line">    look out for correct splice sites (default: 25)</span><br><span class="line"> -B enable output of Ballgown table files which will be created in the</span><br><span class="line">    same directory as the output GTF (requires -G, -o recommended)</span><br><span class="line"> -b enable output of Ballgown table files but these files will be </span><br><span class="line">    created under the directory path given as &lt;dir_path&gt;</span><br><span class="line"> -e only estimate the abundance of given reference transcripts (requires -G)</span><br><span class="line"> --viral : only relevant for long reads from viral data where splice sites</span><br><span class="line">    do not follow consensus (default:false)</span><br><span class="line"> -x do not assemble any transcripts on the given reference sequence(s)</span><br><span class="line"> -u no multi-mapping correction (default: correction enabled)</span><br><span class="line"> -h print this usage message and exit</span><br><span class="line">Transcript merge usage mode: </span><br><span class="line">  stringtie --merge [Options] &#123; gtf_list | strg1.gtf ...&#125;</span><br><span class="line">With this option StringTie will assemble transcripts from multiple</span><br><span class="line">input files generating a unified non-redundant set of isoforms. In this mode</span><br><span class="line">the following options are available:</span><br><span class="line">  -G &lt;guide_gff&gt;   reference annotation to include in the merging (GTF/GFF3)</span><br><span class="line">  -o &lt;out_gtf&gt;     output file name for the merged transcripts GTF</span><br><span class="line">                    (default: stdout)</span><br><span class="line">  -m &lt;min_len&gt;     minimum input transcript length to include in the merge</span><br><span class="line">                    (default: 50)</span><br><span class="line">  -c &lt;min_cov&gt;     minimum input transcript coverage to include in the merge</span><br><span class="line">                    (default: 0)</span><br><span class="line">  -F &lt;min_fpkm&gt;    minimum input transcript FPKM to include in the merge</span><br><span class="line">                    (default: 1.0)</span><br><span class="line">  -T &lt;min_tpm&gt;     minimum input transcript TPM to include in the merge</span><br><span class="line">                    (default: 1.0)</span><br><span class="line">  -f &lt;min_iso&gt;     minimum isoform fraction (default: 0.01)</span><br><span class="line">  -g &lt;gap_len&gt;     gap between transcripts to merge together (default: 250)</span><br><span class="line">  -i               keep merged transcripts with retained introns; by default</span><br><span class="line">                   these are not kept unless there is strong evidence for them</span><br><span class="line">  -l &lt;label&gt;       name prefix for output transcripts (default: MSTRG)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>The generic command line for the default usage has this format::</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stringtie [-o &lt;output.gtf&gt;] [other_options] &lt;read_alignments.bam&gt;</span><br></pre></td></tr></table></figure>
+
+<p>StringTie takes as input a SAM, BAM or CRAM file sorted by coordinate (genomic location).<br>samtools sort -o alnst.sorted.bam alns.sam</p>
+<p>A reference annotation file in GTF or GFF3 format can be provided to StringTie using the -G option which can be used as ‘guides’ for the assembly process and help improve the transcript structure recovery for those transcripts.</p>
+<p>Expression estimation mode (-e),我该用这个模式，只做定量<br>When the -e option is used, the reference annotation file -G is a required input and StringTie will not attempt to assemble the input read alignments but instead it will only estimate the expression levels of the “reference” transcripts provided in the -G file.</p>
+<p>With this option, no “novel” transcript assemblies (isoforms) will be produced, and read alignments not overlapping any of the given reference transcripts will be ignored, which may provide a considerable speed boost when the given set of reference transcripts is limited to a set of target genes for example.</p>
+<p>for each RNA-Seq sample, map the reads to the genome with HISAT2 using the –dta option. It is highly recommended to use the reference annotation information when mapping the reads, which can be either embedded in the genome index (built with the –ss and –exon options, see HISAT2 manual), or provided separately at run time (using the –known-splicesite-infile option of HISAT2). The SAM output of each HISAT2 run must be sorted and converted to BAM using samtools as explained above.</p>
+<p>参考网页 ：<a target="_blank" rel="external nofollow noopener noreferrer" href="http://ccb.jhu.edu/software/stringtie/index.shtml?t=manual">http://ccb.jhu.edu/software/stringtie/index.shtml?t=manual</a></p>
+<p>hisat2_index&#x3D;&#x2F;public2&#x2F;home&#x2F;qianwei&#x2F;project&#x2F;seahorse&#x2F;02.ref&#x2F;hisat2Index&#x2F;Ha<br>gff&#x3D;&#x2F;public2&#x2F;home&#x2F;qianwei&#x2F;project&#x2F;seahorse&#x2F;02.ref&#x2F;Ha.gff<br>threads&#x3D;15<br>cat fq.list| while read id; do<br>arr&#x3D;($id)<br>fq1&#x3D;${arr[0]}<br>fq2&#x3D;${arr[1]}</p>
+<p>hisat2 -p $threads –dta -x $hisat2_index -1 $fq1 -2 $fq2 -S ${sample}.sam<br>grep -P ‘@|NH:i:1\b’ ${sample}.sam | grep -v “ZS:i” &gt; ${sample}.uniq.sam<br>samtools view -@ 4 -bS ${sample}.uniq.sam | samtools sort -@ 4 -m 3g -o ${sample}.uniq.bam -<br>stringtie -p $threads -G ${gff} -B -e -l ${sample} -o ${sample}.gtf ${sample}.uniq.bam</p>
+<p>HISAT2 version 2.2.1 by Daehwan Kim (<a href="mailto:&#105;&#110;&#102;&#x70;&#x68;&#105;&#108;&#111;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;">&#105;&#110;&#102;&#x70;&#x68;&#105;&#108;&#111;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.ccb.jhu.edu/people/infphilo">www.ccb.jhu.edu/people/infphilo</a>)<br>Usage:<br>  hisat2 [options]* -x <ht2-idx> {-1 <m1> -2 <m2> | -U <r>} [-S <sam>]</sam></r></m2></m1></ht2-idx></p>
+<p>  <ht2-idx>  Index filename prefix (minus trailing .X.ht2).<br>  <m1>       Files with #1 mates, paired with files in <m2>.<br>             Could be gzip’ed (extension: .gz) or bzip2’ed (extension: .bz2).<br>  <m2>       Files with #2 mates, paired with files in <m1>.<br>             Could be gzip’ed (extension: .gz) or bzip2’ed (extension: .bz2).<br>  <r>        Files with unpaired reads.<br>             Could be gzip’ed (extension: .gz) or bzip2’ed (extension: .bz2).<br>  <sam>      File for SAM output (default: stdout)</sam></r></m1></m2></m2></m1></ht2-idx></p>
+<p>  <m1>, <m2>, <r> can be comma-separated lists (no whitespace) and can be<br>  specified many times.  E.g. ‘-U file1.fq,file2.fq -U file3.fq’.</r></m2></m1></p>
+<p>Options (defaults in parentheses):</p>
+<p> Input:<br>  -q                 query input files are FASTQ .fq&#x2F;.fastq (default)<br>  –qseq             query input files are in Illumina’s qseq format<br>  -f                 query input files are (multi-)FASTA .fa&#x2F;.mfa<br>  -r                 query input files are raw one-sequence-per-line<br>  -c                 <m1>, <m2>, <r> are sequences themselves, not files<br>  -s&#x2F;–skip <int>    skip the first <int> reads&#x2F;pairs in the input (none)<br>  -u&#x2F;–upto <int>    stop after first <int> reads&#x2F;pairs (no limit)<br>  -5&#x2F;–trim5 <int>   trim <int> bases from 5’&#x2F;left end of reads (0)<br>  -3&#x2F;–trim3 <int>   trim <int> bases from 3’&#x2F;right end of reads (0)<br>  –phred33          qualities are Phred+33 (default)<br>  –phred64          qualities are Phred+64<br>  –int-quals        qualities encoded as space-delimited integers</int></int></int></int></int></int></int></int></r></m2></m1></p>
+<p> Presets:                 Same as:<br>   –fast                 –no-repeat-index<br>   –sensitive            –bowtie2-dp 1 -k 30 –score-min L,0,-0.5<br>   –very-sensitive       –bowtie2-dp 2 -k 50 –score-min L,0,-1</p>
+<p> Alignment:<br>  –bowtie2-dp <int> use Bowtie2’s dynamic programming alignment algorithm (0) - 0: no dynamic programming, 1: conditional dynamic programming, and 2: unconditional dynamic programming (slowest)<br>  –n-ceil <func>    func for max # non-A&#x2F;C&#x2F;G&#x2F;Ts permitted in aln (L,0,0.15)<br>  –ignore-quals     treat all quality values as 30 on Phred scale (off)<br>  –nofw             do not align forward (original) version of read (off)<br>  –norc             do not align reverse-complement version of read (off)<br>  –no-repeat-index  do not use repeat index</func></int></p>
+<p> Spliced Alignment:<br>  –pen-cansplice <int>              penalty for a canonical splice site (0)<br>  –pen-noncansplice <int>           penalty for a non-canonical splice site (12)<br>  –pen-canintronlen <func>          penalty for long introns (G,-8,1) with canonical splice sites<br>  –pen-noncanintronlen <func>       penalty for long introns (G,-8,1) with noncanonical splice sites<br>  –min-intronlen <int>              minimum intron length (20)<br>  –max-intronlen <int>              maximum intron length (500000)<br>  –known-splicesite-infile <path></path>   provide a list of known splice sites<br>  –novel-splicesite-outfile <path></path>  report a list of splice sites<br>  –novel-splicesite-infile <path></path>   provide a list of novel splice sites<br>  –no-temp-splicesite               disable the use of splice sites found<br>  –no-spliced-alignment             disable spliced alignment<br>  –rna-strandness <string>          specify strand-specific information (unstranded)<br>  –tmo                              reports only those alignments within known transcriptome<br>  –dta                              reports alignments tailored for transcript assemblers<br>  –dta-cufflinks                    reports alignments tailored specifically for cufflinks<br>  –avoid-pseudogene                 tries to avoid aligning reads to pseudogenes (experimental option)<br>  –no-templatelen-adjustment        disables template length adjustment for RNA-seq reads</string></int></int></func></func></int></int></p>
+<p> Scoring:<br>  –mp <int>,<int>   max and min penalties for mismatch; lower qual &#x3D; lower penalty &lt;6,2&gt;<br>  –sp <int>,<int>   max and min penalties for soft-clipping; lower qual &#x3D; lower penalty &lt;2,1&gt;<br>  –no-softclip      no soft-clipping<br>  –np <int>         penalty for non-A&#x2F;C&#x2F;G&#x2F;Ts in read&#x2F;ref (1)<br>  –rdg <int>,<int>  read gap open, extend penalties (5,3)<br>  –rfg <int>,<int>  reference gap open, extend penalties (5,3)<br>  –score-min <func> min acceptable alignment score w&#x2F;r&#x2F;t read length<br>                     (L,0.0,-0.2)</func></int></int></int></int></int></int></int></int></int></p>
+<p> Reporting:<br>  -k <int>           It searches for at most <int> distinct, primary alignments for each read. Primary alignments mean<br>                     alignments whose alignment score is equal to or higher than any other alignments. The search terminates<br>                     when it cannot find more distinct valid alignments, or when it finds <int>, whichever happens first.<br>                     The alignment score for a paired-end alignment equals the sum of the alignment scores of<br>                     the individual mates. Each reported read or pair alignment beyond the first has the SAM ‘secondary’ bit<br>                     (which equals 256) set in its FLAGS field. For reads that have more than <int> distinct,<br>                     valid alignments, hisat2 does not guarantee that the <int> alignments reported are the best possible<br>                     in terms of alignment score. Default: 5 (linear index) or 10 (graph index).<br>                     Note: HISAT2 is not designed with large values for -k in mind, and when aligning reads to long,<br>                     repetitive genomes, large -k could make alignment much slower.<br>  –max-seeds <int>  HISAT2, like other aligners, uses seed-and-extend approaches. HISAT2 tries to extend seeds to<br>                     full-length alignments. In HISAT2, –max-seeds is used to control the maximum number of seeds that<br>                     will be extended. For DNA-read alignment (–no-spliced-alignment), HISAT2 extends up to these many seeds<br>                     and skips the rest of the seeds. For RNA-read alignment, HISAT2 skips extending seeds and reports<br>                     no alignments if the number of seeds is larger than the number specified with the option,<br>                     to be compatible with previous versions of HISAT2. Large values for –max-seeds may improve alignment<br>                     sensitivity, but HISAT2 is not designed with large values for –max-seeds in mind, and when aligning<br>                     reads to long, repetitive genomes, large –max-seeds could make alignment much slower.<br>                     The default value is the maximum of 5 and the value that comes with -k times 2.<br>  -a&#x2F;–all           HISAT2 reports all alignments it can find. Using the option is equivalent to using both –max-seeds<br>                     and -k with the maximum value that a 64-bit signed integer can represent (9,223,372,036,854,775,807).<br>  –repeat           report alignments to repeat sequences directly</int></int></int></int></int></int></p>
+<p> Paired-end:<br>  -I&#x2F;–minins <int>  minimum fragment length (0), only valid with –no-spliced-alignment<br>  -X&#x2F;–maxins <int>  maximum fragment length (500), only valid with –no-spliced-alignment<br>  –fr&#x2F;–rf&#x2F;–ff     -1, -2 mates align fw&#x2F;rev, rev&#x2F;fw, fw&#x2F;fw (–fr)<br>  –no-mixed         suppress unpaired alignments for paired reads<br>  –no-discordant    suppress discordant alignments for paired reads</int></int></p>
+<p> Output:<br>  -t&#x2F;–time          print wall-clock time taken by search phases<br>  –un <path></path>           write unpaired reads that didn’t align to <path></path><br>  –al <path></path>           write unpaired reads that aligned at least once to <path></path><br>  –un-conc <path></path>      write pairs that didn’t align concordantly to <path></path><br>  –al-conc <path></path>      write pairs that aligned concordantly at least once to <path></path><br>  (Note: for –un, –al, –un-conc, or –al-conc, add ‘-gz’ to the option name, e.g.<br>  –un-gz <path></path>, to gzip compress output, or add ‘-bz2’ to bzip2 compress output.)<br>  –summary-file <path></path> print alignment summary to this file.<br>  –new-summary         print alignment summary in a new style, which is more machine-friendly.<br>  –quiet               print nothing to stderr except serious errors<br>  –met-file <path></path>     send metrics to file at <path></path> (off)<br>  –met-stderr          send metrics to stderr (off)<br>  –met <int>           report internal counters &amp; metrics every <int> secs (1)<br>  –no-head             suppress header lines, i.e. lines starting with @<br>  –no-sq               suppress @SQ header lines<br>  –rg-id <text>        set read group id, reflected in @RG line and RG:Z: opt field<br>  –rg <text>           add <text> (“lab:value”) to @RG line of SAM header.<br>                        Note: @RG line only printed when –rg-id is set.<br>  –omit-sec-seq        put ‘*’ in SEQ and QUAL fields for secondary alignments.</text></text></text></int></int></p>
+<p> Performance:<br>  -o&#x2F;–offrate <int> override offrate of index; must be &gt;&#x3D; index’s offrate<br>  -p&#x2F;–threads <int> number of alignment threads to launch (1)<br>  –reorder          force SAM output order to match order of input reads<br>  –mm               use memory-mapped I&#x2F;O for index; many ‘hisat2’s can share</int></int></p>
+<p> Other:<br>  –qc-filter        filter out reads that are bad according to QSEQ filter<br>  –seed <int>       seed for random number generator (0)<br>  –non-deterministic seed rand. gen. arbitrarily instead of using read attributes<br>  –remove-chrname   remove ‘chr’ from reference names in alignment<br>  –add-chrname      add ‘chr’ to reference names in alignment<br>  –version          print version information and quit<br>  -h&#x2F;–help          print this usage message</int></p>
+<p>  $hisat2-build<br>No input sequence or sequence file specified!<br>HISAT2 version 2.2.1 by Daehwan Kim (<a href="mailto:&#105;&#x6e;&#102;&#x70;&#x68;&#105;&#108;&#111;&#x40;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#105;&#x6e;&#102;&#x70;&#x68;&#105;&#108;&#111;&#x40;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.ccb.jhu.edu/people/infphilo">http://www.ccb.jhu.edu/people/infphilo</a>)<br>Usage: hisat2-build [options]* <reference_in> <ht2_index_base><br>    reference_in            comma-separated list of files with ref sequences<br>    hisat2_index_base       write ht2 data to files with this dir&#x2F;basename<br>Options:<br>    -c                      reference sequences given on cmd line (as<br>                            <reference_in>)<br>    –large-index           force generated index to be ‘large’, even if ref<br>                            has fewer than 4 billion nucleotides<br>    -a&#x2F;–noauto             disable automatic -p&#x2F;–bmax&#x2F;–dcv memory-fitting<br>    -p <int>                number of threads<br>    –bmax <int>            max bucket sz for blockwise suffix-array builder<br>    –bmaxdivn <int>        max bucket sz as divisor of ref len (default: 4)<br>    –dcv <int>             diff-cover period for blockwise (default: 1024)<br>    –nodc                  disable diff-cover (algorithm becomes quadratic)<br>    -r&#x2F;–noref              don’t build .3&#x2F;.4.ht2 (packed reference) portion<br>    -3&#x2F;–justref            just build .3&#x2F;.4.ht2 (packed reference) portion<br>    -o&#x2F;–offrate <int>      SA is sampled every 2^offRate BWT chars (default: 5)<br>    -t&#x2F;–ftabchars <int>    # of chars consumed in initial lookup (default: 10)<br>    –localoffrate <int>    SA (local) is sampled every 2^offRate BWT chars (default: 3)<br>    –localftabchars <int>  # of chars consumed in initial lookup in a local index (default: 6)<br>    –snp <path></path>            SNP file name<br>    –haplotype <path></path>      haplotype file name<br>    –ss <path></path>             Splice site file name<br>    –exon <path></path>           Exon file name<br>    –repeat-ref <path></path>     Repeat reference file name<br>    –repeat-info <path></path>    Repeat information file name<br>    –repeat-snp <path></path>     Repeat snp file name<br>    –repeat-haplotype <path></path>   Repeat haplotype file name<br>    –seed <int>            seed for random number generator<br>    -q&#x2F;–quiet              disable verbose output (for debugging)<br>    -h&#x2F;–help               print detailed description of tool and its options<br>    –usage                 print this usage message<br>    –version               print version information and quit</int></int></int></int></int></int></int></int></int></reference_in></ht2_index_base></reference_in></p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/knowledge/StardewValley/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    StardewValley
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/biosoft/hisat2-rsem-%E8%BF%9E%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">hisat2 rsem 连用</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            sqw &copy; 2022 
+            <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

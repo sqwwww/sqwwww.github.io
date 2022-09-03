@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>R | sqw workplace</title>
+    
+    
+        <meta name="keywords" content="R">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="data.table    赋值    df_combined[,’:&#x3D;’(‘1_2’ &#x3D; sub1 &gt; sub2, ‘1_3’ &#x3D; sub1 &gt; sub3, ‘1_4’ &#x3D; sub1 &gt; sub4, ‘1_5’ &#x3D; sub1&gt; sub5,                    ‘2_3’ &#x3D; sub2&gt;su">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R">
+<meta property="og:url" content="https://sqwwww.github.io/wiki/codeSkill/R/index.html">
+<meta property="og:site_name" content="sqw workplace">
+<meta property="og:description" content="data.table    赋值    df_combined[,’:&#x3D;’(‘1_2’ &#x3D; sub1 &gt; sub2, ‘1_3’ &#x3D; sub1 &gt; sub3, ‘1_4’ &#x3D; sub1 &gt; sub4, ‘1_5’ &#x3D; sub1&gt; sub5,                    ‘2_3’ &#x3D; sub2&gt;su">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-25T04:40:17.000Z">
+<meta property="article:modified_time" content="2022-08-17T07:59:24.165Z">
+<meta property="article:author" content="sqw">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="sqw workplace" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">sqw workplace</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            biosoft
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            error
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/error/errorRecord/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/biosoft/seqkit/">test</a></li>  <li class="file"><a href="/wiki/biosoft/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/biosoft/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/biosoft/fastq-dump/">fastq-dump</a></li>  <li class="file"><a href="/wiki/biosoft/blast/">blast</a></li>  <li class="file"><a href="/wiki/biosoft/bwa/">bwa</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            codeSkill
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/wiki/codeSkill/R/">R</a></li>  <li class="file"><a href="/wiki/codeSkill/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/codeSkill/genoPlotR/">genoPlotR</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            knowledge
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/knowledge/%E8%A1%A8%E7%9A%AE%E5%8F%91%E8%82%B2/">表皮发育</a></li>  <li class="file"><a href="/wiki/knowledge/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/knowledge/fish/">fish</a></li>  <li class="file"><a href="/wiki/knowledge/lipidDroplet/">lipidDroplet</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            pipeline
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/pipeline/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/">DNA比对流程</a></li>  <li class="file"><a href="/wiki/pipeline/gatk_snp%E6%B5%81%E7%A8%8B/">gatk_snp流程.md</a></li>  <li class="file"><a href="/wiki/pipeline/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/pipeline/RNA%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            tmp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/tmp/hexo-push-error/">hexo/hexo_push_error</a></li>  <li class="file"><a href="/wiki/tmp/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/tmp/hello-world/">Hello World</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-codeSkill/R" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/codeSkill/">codeSkill</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/codeSkill/R/">
+            <time datetime="2022-07-25T04:40:17.000Z" itemprop="datePublished">2022-07-25</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/codeSkill/R.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/codeSkill/R.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/codeSkill/R.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            R
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                </div>
+            
+        
+        
+            <p>data.table<br>    赋值<br>    df_combined[,’:&#x3D;’(‘1_2’ &#x3D; sub1 &gt; sub2, ‘1_3’ &#x3D; sub1 &gt; sub3, ‘1_4’ &#x3D; sub1 &gt; sub4, ‘1_5’ &#x3D; sub1&gt; sub5,<br>                    ‘2_3’ &#x3D; sub2&gt;sub3, ‘2_4’&#x3D; sub2&gt;sub4,’2_5’&#x3D; sub2&gt;sub5,<br>                    ‘3_4’&#x3D;sub3&gt;sub4, ‘3_5’&#x3D;sub3&gt;sub5,<br>                    ‘4_5’&#x3D;sub4&gt;sub5)]<br>    DT[i, c(“LHS1”, “LHS2”) :&#x3D; list(RHS1, RHS2), by &#x3D; …]</p>
+<pre><code>window变region
+myWindow[order(CN, S,E), 
+        g := .(cumsum(c(0L,(shift(S, -1) &gt; cummax(E))[-.N]))),by = CN]
+myRegion &lt;- myWindow[order(CN,S,E),.(NS = min(S), NE = max(E), num = .N, log = mean(log2MFR)),
+                    by = .(CN, g)]
+
+df_combined_filtered[order(CHROM, BIN_START,BIN_END), 
+        g := .(cumsum(c(0L,(shift(BIN_START, -1) &gt; cummax(BIN_END))[-.N]))),by = CHROM]
+myRegion &lt;- df_combined_filtered[order(CHROM, BIN_START,BIN_END),.(NS = min(S), NE = max(E), num = .N,
+                    by = .(CHROM, g)]
+
+
+根据向量选取列（select multiple columns using a character vector）
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">columns &lt;- c(&#x27;mpg&#x27;, &#x27;cyl&#x27;, &#x27;disp&#x27;)</span><br><span class="line">mtcars_dt[, columns, with=FALSE]</span><br><span class="line">mtcars_dt[, .(mpg, cyl, gear)]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+对某一列重命名
+setnames(tmp_data, &quot;gene_id&quot;, current_sampleID)
+
+
+Pitching[ , .SD, .SDcols = c(&#39;W&#39;, &#39;L&#39;, &#39;G&#39;)]
+DT[i, c(&quot;LHS1&quot;, &quot;LHS2&quot;) := list(RHS1, RHS2), by = ...]
+
+填补NA
+replace_na(df$X1,5) # 把df的X1列中的NA填充为5
+
+改变列的数据类型
+mRNA_gff[, V3:= lapply(V3, as.numeric)]
+
+
+
+setkey和setkeyv
+用来对data table 进行排序，setkey是根据一列排，setkeyv可以根据多列排
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">    a &lt;- fread(file = paste0(&quot;../published/NC21/&quot;,samp,&quot;_depth.txt&quot;))</span><br><span class="line">    setnames(a, &quot;# chrom&quot;, &quot;chrom&quot;)</span><br><span class="line">    setnames(a, &quot;meanCoverage&quot;, &quot;samp&quot;)</span><br><span class="line">    tmp_1 &lt;- a[,.(chrom,chromStart,chromEnd, samp)]</span><br><span class="line">    setkeyv(tmp_1, c(&quot;chrom&quot;,&quot;chromStart&quot;,&quot;chromEnd&quot;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dylyr</span><br><span class="line">filter</span><br><span class="line">raw_ortho %&gt;% filter_all(all_vars(. != &quot;N&quot;))</span><br><span class="line">msleep %&gt;% </span><br><span class="line">  select(name, sleep_total) %&gt;% </span><br><span class="line">  filter(between(sleep_total, 16, 18))</span><br><span class="line">msleep %&gt;% </span><br><span class="line">  select(name, sleep_total) %&gt;% </span><br><span class="line">  filter(near(sleep_total, 17, tol = sd(sleep_total)))</span><br><span class="line">msleep %&gt;% </span><br><span class="line">  select(order, name, sleep_total) %&gt;% </span><br><span class="line">  filter(order %in% c(&quot;Didelphimorphia&quot;, &quot;Diprotodontia&quot;))</span><br><span class="line">msleep %&gt;% </span><br><span class="line">  select(order, name, sleep_total) %&gt;% </span><br><span class="line">  filter(!order %in% remove)</span><br><span class="line">msleep %&gt;% </span><br><span class="line">  select(name, sleep_total) %&gt;% </span><br><span class="line">  filter(str_detect(tolower(name), pattern = &quot;mouse&quot;)) #filter(grepl(pattern=&quot;mouse&quot;, tolower(name)))</span><br><span class="line"></span><br><span class="line">filter(condition1, condition2)</span><br><span class="line">filter(condition1, !condition2)</span><br><span class="line">filter(condition1 | condition2) # return rows where condition 1 and/or condition 2 is met.</span><br><span class="line">filter(xor(condition1, condition2) # return all rows where only one of the conditions is met, and not when both conditions are met.</span><br><span class="line"></span><br><span class="line"># 删除某一列含有NA的行</span><br><span class="line">msleep %&gt;% </span><br><span class="line">  select(name, conservation:sleep_cycle) %&gt;% </span><br><span class="line">  filter(!is.na(conservation))</span><br><span class="line"></span><br><span class="line">#根据多列进行过滤</span><br><span class="line">    filter_all() will filter all columns based on your further instructions</span><br><span class="line">    filter_if() requires a function that returns a boolean to indicate which columns to filter on. If that is true, the filter instructions will be followed for those columns.</span><br><span class="line">    filter_at() requires you to specify columns inside a vars() argument for which the filtering will be done.</span><br><span class="line"></span><br><span class="line">    any_vars() statement is equivalent to OR</span><br><span class="line">    all_vars() statement is equivalent to AND</span><br><span class="line"></span><br><span class="line">    msleep %&gt;% </span><br><span class="line">        select(name:order, sleep_total, -vore) %&gt;% </span><br><span class="line">        filter_all(any_vars(str_detect(., pattern = &quot;Ca&quot;)))</span><br><span class="line"></span><br><span class="line">    msleep %&gt;%  </span><br><span class="line">        select(name, sleep_total:bodywt) %&gt;% </span><br><span class="line">        filter_all(any_vars(. &lt; 0.1))</span><br><span class="line"></span><br><span class="line">    msleep %&gt;% </span><br><span class="line">        select(name:order, sleep_total:sleep_rem) %&gt;% </span><br><span class="line">        filter_if(is.character, any_vars(is.na(.))) # is.numeric, is.integer, is.double, is.logical, is.factor</span><br><span class="line"></span><br><span class="line">    msleep %&gt;% </span><br><span class="line">        select(name, sleep_total:sleep_rem, brainwt:bodywt) %&gt;% </span><br><span class="line">        filter_at(vars(sleep_total, sleep_rem), all_vars(.&gt;5)) #all_vars() if all columns need to return TRUE (AND equivalent)</span><br><span class="line">    # you can just select columns to which the change should happen via the vars()</span><br><span class="line">    msleep %&gt;% </span><br><span class="line">        select(name, sleep_total:sleep_rem, brainwt:bodywt) %&gt;% </span><br><span class="line">        filter_at(vars(contains(&quot;sleep&quot;)), all_vars(.&gt;5)) #any_vars() in case just one variable needs to return TRUE (OR equivalent)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href></a></li>
+<li><a href></a></li>
+</ul>
+</blockquote>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/pipeline/coverage-pipeline/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    coverage_pipeline
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/codeSkill/shell%E6%8A%80%E5%B7%A7/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">data.table用法</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            sqw &copy; 2022 
+            <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
