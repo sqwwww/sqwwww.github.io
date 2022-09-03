@@ -189,7 +189,7 @@
                             &nbsp;
                             biosoft
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/">DNA比对流程</a></li>  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/">gatk_snp流程.md</a></li>  </ul> 
                     </li> 
                      <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  <li class="file"><a href="/wiki/test/">test</a></li>  <li class="file"><a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/R/">R</a></li>  <li class="file"><a href="/wiki/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/fastq-dump/">fastq-dump</a></li>  <li class="file"><a href="/wiki/fish/">fish</a></li>  <li class="file"><a href="/wiki/blast/">blast</a></li>  <li class="file"><a href="/wiki/lipidDroplet/">lipidDroplet</a></li>  <li class="file"><a href="/wiki/genoPlotR/">genoPlotR</a></li>  <li class="file"><a href="/wiki/bwa/">bwa</a></li>  <li class="file"><a href="/wiki/RNA%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
     </div>
@@ -263,194 +263,6 @@
 </aside>
             
             <section id="main">
-        <article id="post-coverage-pipeline" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-                        
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/wiki/coverage-pipeline/">
-            <time datetime="2022-07-28T09:45:49.000Z" itemprop="datePublished">2022-07-28</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/coverage-pipeline.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/coverage-pipeline.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/coverage-pipeline.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/wiki/coverage-pipeline/">coverage_pipeline</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p></p><p>从bam文件到coverage<br>sambamba depth window –overlap 2500 -w 5000 -o female_Mhap1_depth.txt -t 28 -q&#x3D;30 $bam</p>
-<p>得到用来做normalise的depth</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">file=$1</span><br><span class="line">samtools stats $file &gt; $&#123;file&#125;_temp</span><br><span class="line">number=$(grep ^COV $&#123;file&#125;_temp | cut -f 2- | awk -v max=0 &#x27;&#123;if($3&gt;max)&#123;want=$2; max=$3&#125;&#125;END&#123;print want&#125; &#x27; -)</span><br><span class="line">rm $&#123;file&#125;_temp</span><br><span class="line">echo $file $number &gt; $&#123;file&#125;_modal_depth.txt</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
-<p>
-                
-            
-        
-        
-            </p></blockquote></div>   
-            <div class="article-more-link">
-                <a href="/wiki/coverage-pipeline/#more">Read More</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-R" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-                        
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/wiki/R/">
-            <time datetime="2022-07-25T04:40:17.000Z" itemprop="datePublished">2022-07-25</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/R.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/R.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/R.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/wiki/R/">R</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p></p><p>data.table<br>    赋值<br>    df_combined[,’:&#x3D;’(‘1_2’ &#x3D; sub1 &gt; sub2, ‘1_3’ &#x3D; sub1 &gt; sub3, ‘1_4’ &#x3D; sub1 &gt; sub4, ‘1_5’ &#x3D; sub1&gt; sub5,<br>                    ‘2_3’ &#x3D; sub2&gt;sub3, ‘2_4’&#x3D; sub2&gt;sub4,’2_5’&#x3D; sub2&gt;sub5,<br>                    ‘3_4’&#x3D;sub3&gt;sub4, ‘3_5’&#x3D;sub3&gt;sub5,<br>                    ‘4_5’&#x3D;sub4&gt;sub5)]<br>    DT[i, c(“LHS1”, “LHS2”) :&#x3D; list(RHS1, RHS2), by &#x3D; …]</p>
-<pre><code>window变region
-myWindow[order(CN, S,E), 
-        g := .(cumsum(c(0L,(shift(S, -1) &gt; cummax(E))[-.N]))),by = CN]
-myRegion &lt;- myWindow[order(CN,S,E),.(NS = min(S), NE = max(E), num = .N, log = mean(log2MFR)),
-<p>
-                
-            
-        
-        
-            </p></code></pre></div>   
-            <div class="article-more-link">
-                <a href="/wiki/R/#more">Read More</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
         <article id="post-shell技巧" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -639,6 +451,105 @@ myRegion &lt;- myWindow[order(CN,S,E),.(NS = min(S), NE = max(E), num = .N, log 
 
 
     
+        <article id="post-biosoft/DNA比对流程" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/biosoft/">biosoft</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/">
+            <time datetime="2022-07-16T09:01:36.000Z" itemprop="datePublished">2022-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/biosoft/DNA比对流程.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/biosoft/DNA比对流程.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/biosoft/DNA比对流程.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/">DNA比对流程</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><p>用来 call coverage 和 snp 的流程，从reads到结果图</p>
+<p>ref&#x3D;ref&#x2F;bowtie2Index&#x2F;sub<br>threads&#x3D;20<br>cat fq_list|while read id; do</p>
+<pre><code>arr=($id)
+fq1=$&#123;arr[0]&#125;
+fq2=$&#123;arr[1]&#125;
+<p>
+                
+            
+        
+        
+            </p></code></pre></div>   
+            <div class="article-more-link">
+                <a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-biosoft/bowtieAndBowtie2" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -725,6 +636,105 @@ myRegion &lt;- myWindow[order(CN,S,E),.(NS = min(S), NE = max(E), num = .N, log 
             </p></div>   
             <div class="article-more-link">
                 <a href="/wiki/biosoft/bowtieAndBowtie2/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-biosoft/gatk_snp流程" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/biosoft/">biosoft</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/">
+            <time datetime="2022-07-16T09:01:36.000Z" itemprop="datePublished">2022-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/biosoft/gatk_snp流程.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/biosoft/gatk_snp流程.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/biosoft/gatk_snp流程.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/">gatk_snp流程.md</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><p>gatk官方博文，描述 gatk4和之前版本的差异 <a target="_blank" rel="external nofollow noopener noreferrer" href="http://broad.io/GATK4-1">http://broad.io/GATK4-1</a><br>一些terra上的实例：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://terra.bio/#library/showcase">https://terra.bio/#library/showcase</a></p>
+<p>数据预处理：<br>map<br>    bam文件中会包含read group的信息，在之后的分析中要用到<br>mark duplicates<br>recalibrate base quality score（BQSR）：对machine error（包含pcr error和测序error）重新校准<br>analysis-ready bam</p>
+<p>多样本可以做joint calling<br>    对每个样本单独call snp，得到 gvcf（包含基因组上所有位点的信息）<br>    用所有样本的gvcf 做一个 joint calling，筛选出至少一个样本中存在变异的位点</p>
+<p>建立索引<br>nohup ~&#x2F;biosoft&#x2F;gatk-4.1.9.0&#x2F;gatk CreateSequenceDictionary -R subelongatus.fa -O gatk.dict &amp;&gt; gatkIndex.log &amp;</p>
+<p>gatk必须要sam&#x2F;bam文件的头文件信息（reads group），其中ID，PL和SM信息是必须要的<br>若是忘记添加read group信息还以通过 AddOrReplaceReadGroups 添加<br>GATK 要求read group的格式<br>ID &#x3D; Read group identifier<br>　　每一个read group 独有的ID，每一对reads 均有一个独特的ID，可以自定义命名；<br>PL &#x3D; Platform<br>　　测序平台；ILLUMINA, SOLID, LS454, HELICOS and PACBIO，不区分大小写；<br>SM &#x3D; sample<br>　　reads属于的样品名；SM要设定正确，因为GATK产生的VCF文件也使用这个名字;<br>LB &#x3D; DNA preparation library identifier<br>　　对一个read group的reads进行重复序列标记时，需要使用LB来区分reads来自那条lane;有时候，同一个库可能在不同的lane上完成测序;为了加以区分，<br>　　同一个或不同库只要是在不同的lane产生的reads都要单独给一个ID. 一般无特殊说明，成对儿read属于同一库，可自定义，比如：library1</p>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/#more">Read More</a>
             </div>
         
         <footer class="article-footer">

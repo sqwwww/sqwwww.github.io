@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>sqw workplace</title>
+    <title>DNA比对流程 | sqw workplace</title>
     
     
-        <meta name="keywords" content="sqw workplace">
+        <meta name="keywords" content="DNA比对流程">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="用来 call coverage 和 snp 的流程，从reads到结果图 ref&#x3D;ref&#x2F;bowtie2Index&#x2F;subthreads&#x3D;20cat fq_list|while read id; do arr&#x3D;($id) fq1&#x3D;$&amp;#123;arr[0]&amp;#125; fq2&#x3D;$&amp;#123;arr[1]&amp;#125; sample&#x3D;&#96;basename $fq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sqw workplace">
+<meta property="og:title" content="DNA比对流程">
 <meta property="og:url" content="https://sqwwww.github.io/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="sqw workplace">
 <meta property="og:description" content="用来 call coverage 和 snp 的流程，从reads到结果图 ref&#x3D;ref&#x2F;bowtie2Index&#x2F;subthreads&#x3D;20cat fq_list|while read id; do arr&#x3D;($id) fq1&#x3D;$&amp;#123;arr[0]&amp;#125; fq2&#x3D;$&amp;#123;arr[1]&amp;#125; sample&#x3D;&#96;basename $fq">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-09-03T02:52:42.018Z">
-<meta property="article:modified_time" content="2022-07-21T05:00:27.313Z">
+<meta property="article:published_time" content="2022-07-16T09:01:36.000Z">
+<meta property="article:modified_time" content="2022-09-03T03:36:01.303Z">
 <meta property="article:author" content="sqw">
 <meta name="twitter:card" content="summary">
     
@@ -193,7 +193,7 @@
                             &nbsp;
                             biosoft
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file active"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/"></a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/">DNA比对流程</a></li>  <li class="file"><a href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a></li>  <li class="file"><a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/">gatk_snp流程.md</a></li>  </ul> 
                     </li> 
                      <li class="file"><a href="/wiki/SqwPersonal/">SqwPersonal</a></li>  <li class="file"><a href="/wiki/test/">test</a></li>  <li class="file"><a href="/wiki/hexo-vsCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">hexo/vsCode使用技巧</a></li>  <li class="file"><a href="/wiki/hisat2-rsem-%E8%BF%9E%E7%94%A8/">hisat2 rsem 连用</a></li>  <li class="file"><a href="/wiki/stringtie%E4%BD%BF%E7%94%A8/">stringtie使用</a></li>  <li class="file"><a href="/wiki/StardewValley/">StardewValley</a></li>  <li class="file"><a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/">ragtag使用</a></li>  <li class="file"><a href="/wiki/R/">R</a></li>  <li class="file"><a href="/wiki/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/coverage-pipeline/">coverage_pipeline</a></li>  <li class="file"><a href="/wiki/fastq-dump/">fastq-dump</a></li>  <li class="file"><a href="/wiki/fish/">fish</a></li>  <li class="file"><a href="/wiki/blast/">blast</a></li>  <li class="file"><a href="/wiki/lipidDroplet/">lipidDroplet</a></li>  <li class="file"><a href="/wiki/genoPlotR/">genoPlotR</a></li>  <li class="file"><a href="/wiki/bwa/">bwa</a></li>  <li class="file"><a href="/wiki/RNA%E6%B5%81%E7%A8%8B/"></a></li>  </ul> 
     </div>
@@ -270,10 +270,60 @@
     <div class="article-inner">
         
         
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/biosoft/">biosoft</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/biosoft/DNA%E6%AF%94%E5%AF%B9%E6%B5%81%E7%A8%8B/">
+            <time datetime="2022-07-16T09:01:36.000Z" itemprop="datePublished">2022-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/biosoft/DNA比对流程.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/biosoft/DNA比对流程.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/biosoft/DNA比对流程.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            DNA比对流程
+        </h1>
+    
+
+            </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
         
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    
+                </div>
             
         
         
@@ -317,19 +367,19 @@ samtools index $&#123;sample&#125;.uniq.bam
     
 <nav id="article-nav">
     
-        <a href="/wiki/biosoft/gatk_snp%E6%B5%81%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/wiki/ragtag%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    (no title)
+                    ragtag使用
                 
             </div>
         </a>
     
     
-        <a href="/wiki/2/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/wiki/biosoft/bowtieAndBowtie2/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Hello World</div>
+            <div class="article-nav-title">bowtieAndBowtie2</div>
         </a>
     
 </nav>
