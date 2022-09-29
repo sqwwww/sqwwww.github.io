@@ -198,7 +198,7 @@
                             &nbsp;
                             codeSkill
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/codeSkill/R/">R</a></li>  <li class="file"><a href="/wiki/codeSkill/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/codeSkill/genoPlotR/">genoPlotR</a></li>  <li class="file"><a href="/wiki/codeSkill/pbsSystem/">pbsSystem</a></li>  <li class="file"><a href="/wiki/codeSkill/sbatchSystem/">sbatchSystem</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/codeSkill/R/">R</a></li>  <li class="file"><a href="/wiki/codeSkill/shell%E6%8A%80%E5%B7%A7/">data.table用法</a></li>  <li class="file"><a href="/wiki/codeSkill/genoPlotR/">genoPlotR</a></li>  <li class="file"><a href="/wiki/codeSkill/pbsSystem/">pbsSystem</a></li>  <li class="file"><a href="/wiki/codeSkill/sbatchSystem/">sbatchSystem</a></li>  <li class="file"><a href="/wiki/codeSkill/shellCode/">shellCode</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -308,6 +308,105 @@
 </aside>
             
             <section id="main">
+        <article id="post-biosoft/bowtieAndBowtie2" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/biosoft/">biosoft</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/biosoft/bowtieAndBowtie2/">
+            <time datetime="2022-07-16T09:01:36.000Z" itemprop="datePublished">2022-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/biosoft/bowtieAndBowtie2.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/biosoft/bowtieAndBowtie2.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/biosoft/bowtieAndBowtie2.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wiki/biosoft/bowtieAndBowtie2/">bowtieAndBowtie2</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><p>bowtie和bowtie2的区别<br>这两个软件都适合DNA的比对，bowtie开发的比较早，适合短reads（50bp）的比对，bowtie2适合长一点的reads（150bp）的比对，现在的数据基本上都适合用bowtie2</p>
+<p>bowtie2 如何选择 uniq mapping 的 reads</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;AS:&quot; aligned.sam | grep -v &quot;XS:i&quot;</span><br></pre></td></tr></table></figure>
+
+<p>hisat比的话 grep “NH:i:1” aligned.sam | grep -v “ZS:i” </p>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/wiki/biosoft/bowtieAndBowtie2/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-pipeline/DNA比对流程" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1163,79 +1262,8 @@ fq2=$&#123;arr[1]&#125;
 
 
     
-        <article id="post-SqwPersonal" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-                        
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/wiki/SqwPersonal/">
-            <time datetime="2022-07-15T04:49:53.000Z" itemprop="datePublished">2022-07-15</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/SqwPersonal.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/SqwPersonal.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/SqwPersonal.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/wiki/SqwPersonal/">SqwPersonal</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-            
-        
-        
-            
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
         <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+        <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
         </nav>
     
 </section>

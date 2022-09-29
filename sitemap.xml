@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sqwwww.github.io/wiki/codeSkill/shellCode/</loc>
+    
+    <lastmod>2022-09-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sqwwww.github.io/wiki/pipeline/gatk_snp%E6%B5%81%E7%A8%8B/</loc>
     
     <lastmod>2022-09-29</lastmod>
@@ -209,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/wiki/game/StardewValley/</loc>
+    <loc>https://sqwwww.github.io/wiki/biosoft/stringtie%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2022-07-16</lastmod>
     
@@ -218,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/wiki/biosoft/stringtie%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://sqwwww.github.io/wiki/game/StardewValley/</loc>
     
     <lastmod>2022-07-16</lastmod>
     
@@ -308,7 +317,7 @@
 
   
   <url>
-    <loc>https://sqwwww.github.io/tags/%E9%9B%86%E7%BE%A4/</loc>
+    <loc>https://sqwwww.github.io/tags/paperReading-teacher/</loc>
     <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -322,14 +331,14 @@
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/tags/bug-hexo-push/</loc>
+    <loc>https://sqwwww.github.io/tags/%E9%9B%86%E7%BE%A4/</loc>
     <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/tags/paperReading-teacher/</loc>
+    <loc>https://sqwwww.github.io/tags/bug-hexo-push/</loc>
     <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -352,7 +361,7 @@
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/categories/game/</loc>
+    <loc>https://sqwwww.github.io/categories/codeSkill/</loc>
     <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -366,7 +375,7 @@
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/categories/codeSkill/</loc>
+    <loc>https://sqwwww.github.io/categories/game/</loc>
     <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
