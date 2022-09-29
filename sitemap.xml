@@ -2,9 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sqwwww.github.io/wiki/knowledge/%E8%A1%A8%E7%9A%AE%E5%8F%91%E8%82%B2/</loc>
+    <loc>https://sqwwww.github.io/wiki/pipeline/gatk_snp%E6%B5%81%E7%A8%8B/</loc>
     
-    <lastmod>2022-09-03</lastmod>
+    <lastmod>2022-09-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/wiki/knowledge/paperArrange/</loc>
+    
+    <lastmod>2022-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/wiki/knowledge/statisticTest/</loc>
+    
+    <lastmod>2022-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/wiki/codeSkill/genoPlotR/</loc>
+    
+    <lastmod>2022-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/wiki/codeSkill/pbsSystem/</loc>
+    
+    <lastmod>2022-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/wiki/codeSkill/sbatchSystem/</loc>
+    
+    <lastmod>2022-09-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,14 +58,32 @@
   <url>
     <loc>https://sqwwww.github.io/wiki/codeSkill/shell%E6%8A%80%E5%B7%A7/</loc>
     
-    <lastmod>2022-09-03</lastmod>
+    <lastmod>2022-09-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/wiki/pipeline/gatk_snp%E6%B5%81%E7%A8%8B/</loc>
+    <loc>https://sqwwww.github.io/wiki/knowledge/pregnancy/</loc>
+    
+    <lastmod>2022-09-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/wiki/biosoft/repeatMasker/</loc>
+    
+    <lastmod>2022-09-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/wiki/knowledge/%E8%A1%A8%E7%9A%AE%E5%8F%91%E8%82%B2/</loc>
     
     <lastmod>2022-09-03</lastmod>
     
@@ -59,15 +122,6 @@
     <loc>https://sqwwww.github.io/wiki/biosoft/bwa/</loc>
     
     <lastmod>2022-08-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sqwwww.github.io/wiki/codeSkill/genoPlotR/</loc>
-    
-    <lastmod>2022-08-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -155,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/wiki/biosoft/stringtie%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://sqwwww.github.io/wiki/game/StardewValley/</loc>
     
     <lastmod>2022-07-16</lastmod>
     
@@ -164,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/wiki/knowledge/StardewValley/</loc>
+    <loc>https://sqwwww.github.io/wiki/biosoft/stringtie%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2022-07-16</lastmod>
     
@@ -247,15 +301,36 @@
 
   <url>
     <loc>https://sqwwww.github.io/</loc>
-    <lastmod>2022-09-03</lastmod>
+    <lastmod>2022-09-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://sqwwww.github.io/tags/%E9%9B%86%E7%BE%A4/</loc>
+    <lastmod>2022-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/tags/statistic-ANOVA-MANOVA/</loc>
+    <lastmod>2022-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sqwwww.github.io/tags/bug-hexo-push/</loc>
-    <lastmod>2022-09-03</lastmod>
+    <lastmod>2022-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/tags/paperReading-teacher/</loc>
+    <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -263,43 +338,50 @@
 
   
   <url>
-    <loc>https://sqwwww.github.io/categories/biosoft/</loc>
-    <lastmod>2022-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sqwwww.github.io/categories/codeSkill/</loc>
-    <lastmod>2022-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sqwwww.github.io/categories/knowledge/</loc>
-    <lastmod>2022-09-03</lastmod>
+    <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sqwwww.github.io/categories/tmp/</loc>
-    <lastmod>2022-09-03</lastmod>
+    <loc>https://sqwwww.github.io/categories/biosoft/</loc>
+    <lastmod>2022-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/categories/game/</loc>
+    <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sqwwww.github.io/categories/pipeline/</loc>
-    <lastmod>2022-09-03</lastmod>
+    <lastmod>2022-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/categories/codeSkill/</loc>
+    <lastmod>2022-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sqwwww.github.io/categories/tmp/</loc>
+    <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sqwwww.github.io/categories/biosoft/error/</loc>
-    <lastmod>2022-09-03</lastmod>
+    <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
